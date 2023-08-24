@@ -18,11 +18,9 @@ export const Header = () => {
         >
           Log in
         </Link>
-       <Link onClick={()=> signOut()} className="shadow-md py-2 px-6  bg-black rounded-full text-white cursor-pointer font-semibold hover:opacity-70"
-       href={"/auth/signup"}
-       >
+        <div onClick={()=> signOut()} className="shadow-md py-2 px-6  bg-black rounded-full text-white cursor-pointer font-semibold hover:opacity-70">
           Log out
-        </Link>
+        </div>
       </div>
     </div>
   );
