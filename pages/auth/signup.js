@@ -1,29 +1,31 @@
 import { Form } from "@/src/components/form";
-import React from "react";
+import { signIn } from "next-auth/react"
 
-const Signup = () => {
-  const onSubmit = async (email, password) => {
-    try {
-      const response = await fetch("/api/auth/signup", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (response.ok) {
-      alert("sign up successful");
-      }
-    } catch (err) {
-      console.error(err);
+
+
+
+const SignUp = () => {
+
+    const onSignUp = async  (email, password) => {
+        const res = await fetch("/api/auth/signup", {
+            method: "POST",
+            body: JSON.stringify({email, password}),
+            headers: {
+                "Content-Type" : "application/json"
+            }
+        })
+       const data = await res.json();
+       if(!res.ok) {
+        console.error(data.message);
+        return;
+       }
+        alert("sign up successful");
+
     }
-  };
-
-  return (
-    <div className="flex justify-center items-center">
-      <Form signIn={false} onFormSubmit={onSubmit} />
-    </div>
-  );
-};
-
-export default Signup;
+    return (
+        <>
+        <Form signIn={false} onFormSubmit = {onSignUp}/>
+        </>
+    )
+}
+export default SignUp;
