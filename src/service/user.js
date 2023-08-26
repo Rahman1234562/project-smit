@@ -11,7 +11,7 @@ export const getAllUser = () => {
 
 export const getByEmail = (email) => {
   const users = getAllUser();
-  return users.find((user) => user.email.toLowerCase() === email.toLowerCase());
+  return users.find((user) => user.email === email);
 };
 export const verifyPassword = async (password, hashPassword) => {
   const isValid = await bcrypt.compare(password, hashPassword);
