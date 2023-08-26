@@ -1,4 +1,5 @@
 import { getSession } from "next-auth/react";
+import { redirect } from "next/dist/server/api-utils";
 
 export default function Profile() {
   return (
@@ -8,20 +9,33 @@ export default function Profile() {
   );
 }
 
-
-export async function getServerSideProps ({req}) {
-  const session = await  getSession({req});
-  if(!session){
-    return{
-        redirect : {
-            destination: "/auth/signin",
-            parmenent : false      
-         }
-    }
+export async function getServerSideProps({ req }) {
+  const session = await getSession({ req });
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth/signin",
+        parmenent: false,
+      },
+    };
   }
-  return{
+  if (session) {
+    return {
+      redirect: {
+        destination: "/auth/signin",
+        parmenent: false,
+      },
+    };
+  }
+ 
+  return {
     props: {
-        session
+      session,
+    },
+  };
+  return {
+    props: {
+        
     }
   }
 }
