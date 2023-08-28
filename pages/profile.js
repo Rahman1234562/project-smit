@@ -9,33 +9,20 @@ export default function Profile() {
   );
 }
 
-export async function getServerSideProps({ req }) {
-  const session = await getSession({ req });
-  if (!session) {
+
+export async function getServerSideProps ({req}) {
+  const session = await getSession({req});
+  if(!session){
     return {
       redirect: {
         destination: "/auth/signin",
-        parmenent: false,
-      },
-    };
+        parmenent: false
+      }
+    }
   }
-  if (session) {
-    return {
-      redirect: {
-        destination: "/auth/signin",
-        parmenent: false,
-      },
-    };
-  }
- 
-  return {
+  return{
     props: {
-      session,
-    },
-  };
-  return {
-    props: {
-        
+      session
     }
   }
 }

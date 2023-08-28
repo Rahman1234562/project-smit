@@ -13,11 +13,11 @@ export const getByEmail = (email) => {
   const users = getAllUser();
   return users.find((user) => user.email === email);
 };
-export const verifyPassword = async (password, hashPassword) => {
-  const isValid = await bcrypt.compare(password, hashPassword);
+export const verifyPassword = async (password, hashedPassword) => {
+  const isValid = await bcrypt.compare(password, hashedPassword);
   return isValid;
-
 }
+
 
 export const registerUser = async (email, password) => {
   const users = getAllUser();
@@ -26,12 +26,12 @@ export const registerUser = async (email, password) => {
     throw new Error("user exist");
   }
 
-  const hashPassword = await bcrypt.hash(password, 12);
+  const hashedPassword = await bcrypt.hash(password, 12);
 
   users.push({
     id: users.length + 1,
     email,
-    password: hashPassword
+    password: hashedPassword
   });
 
   fs.writeFileSync(filePath, JSON.stringify(users));

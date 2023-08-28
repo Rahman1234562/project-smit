@@ -8,7 +8,7 @@ const SignIn = () => {
 
     const onSignIn = async (email, password) => {
         try{
-             const data = await signIn('credential', {redirect: false, email, password});
+             const data = await signIn('credentials', {redirect: false, email, password});
              console.log(data);
              if(data.ok){
                 router.replace("/profile");
