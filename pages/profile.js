@@ -1,13 +1,26 @@
 import { getSession } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 
 export default function Profile() {
   return (
-    <div className="h-[70vh] flex items-center justify-center">
-      <h1 className="text-3xl font-semibold">My profile page</h1>
+    <>
+        <div className="h-[70vh] flex justify-center">
+      <h1 className="text-3xl font-semibold">wellcome to My profile page</h1>
     </div>
+
+    <p className="mb-10">i am working is an <span>web</span> and <span>app</span> develpment is an smit</p>
+    </>
+
+
+    
   );
-}
+ 
+   
+
+  }
+
+
+
+
 
 
 export async function getServerSideProps ({req}) {

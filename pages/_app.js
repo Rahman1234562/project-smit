@@ -6,7 +6,7 @@ import Head from "next/head";
 import { session } from "next-auth/react";
 
 
-export default function App({ Component, pageProps:{session, ...pageProps} }) {
+export default function App({ Component, pageProps}) {
   return (
     <>
       <Head>
@@ -15,8 +15,8 @@ export default function App({ Component, pageProps:{session, ...pageProps} }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+            <SessionProvider session={pageProps.session}>
       <Header/>
-      <SessionProvider session={session}>
          <Component {...pageProps} />
       </SessionProvider>
      
