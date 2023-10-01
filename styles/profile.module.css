@@ -1,0 +1,91 @@
+
+.heading{
+    /* height: 50px;
+    width: 40px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bold;
+     /* background-color: aqua; */
+}
+.heading1 {
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.head {
+    padding-right: 32rem;
+    margin-top: 4rem;
+    font-weight: bold;
+}
+
+.head2 {
+    padding-right: 32rem;
+    /* margin-top: 4rem; */
+    font-weight: bold;
+}
+.para1 {
+    display: flex;
+  flex: start;
+    margin: 0rem 22rem;
+}
+
+.projects {
+    height: 15rem;
+    margin-bottom: 1rem;
+    /* background-color: beige; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.projects1 {
+    /* height: 30px; */
+    width: 30%;
+    background-color: beige;
+    margin-left: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 2px solid beige;
+    border-radius: 15px;
+
+}
+.projects2 {
+    /* height: 30rem; */
+    width: 30%;
+    background-color: beige;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 2px solid beige;
+    border-radius: 15px;
+
+}
+
+.projects3 {
+    /* height: 30rem; */
+    width: 30%;
+    background-color: beige;
+    margin-right: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 2px solid beige;
+    border-radius: 15px;
+
+}
+
+.paragh {
+    font-size: 16px;
+    margin-top: 2rem;
+}
+.paragh1 {
+    font-size: 16px;
+    margin-top: 2rem;
+}
+.paragh2 {
+    font-size: 16px;
+    margin-top: 2rem;
+}
