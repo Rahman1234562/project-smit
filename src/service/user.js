@@ -19,6 +19,7 @@ export const verifyPassword = async (password, hashedPassword) => {
 }
 
 
+
 export const registerUser = async (email, password) => {
   const users = getAllUser();
   const found = getByEmail(email);
@@ -31,7 +32,9 @@ export const registerUser = async (email, password) => {
   users.push({
     id: users.length + 1,
     email,
-    password: hashedPassword
+    password: hashedPassword,
+
+    
   });
 
   fs.writeFileSync(filePath, JSON.stringify(users));

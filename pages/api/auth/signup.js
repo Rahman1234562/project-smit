@@ -6,10 +6,10 @@ export default function handler(req, res) {
     res.status(404).json({})
    }
 
-   const {email, password} = req.body;
-   console.log(email, password);
+   const {email, password, confirmPassword} = req.body;
+   console.log(email, password, confirmPassword);
    try{
-    const data = registerUser(email, password)
+    const data = registerUser(email, password, confirmPassword)
     res.status(201).json(data);
    }catch (err){
     res.status(400).json({message: err.message})

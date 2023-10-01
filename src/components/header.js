@@ -6,7 +6,7 @@ export const Header = () => {
 
   return (
     <div className="w-full h-20 flex justify-between items-center shadow-md px-10">
-      <h1 className="font-bold">NEXT AUTHENTICATION</h1>
+      <h1 className="font-bold">personal website</h1>
       <div className="flex gap-6">
         {session && (
           <Link

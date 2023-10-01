@@ -4,6 +4,7 @@ import { useRef } from "react"
 export const Form = ({signIn, onFormSubmit}) => {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const confirmPasswordRef = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -35,6 +36,7 @@ export const Form = ({signIn, onFormSubmit}) => {
                     placeholder="Enter your password"
                     className="w-full px-6 h-10 bg-white shadow-md rounded"/>
                 </label>
+
                 {signIn ? (
           <p>
             Don't have an account? 
